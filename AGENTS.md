@@ -35,3 +35,19 @@ Personal learning repository (not a software project). Goal: understand deep lea
 - When adding study notes, match the existing style in `notes/day1.md`: Chinese prose, markdown headings, occasional ASCII diagrams and tables.
 - When adding weekly code, create/extend the matching `weekNN/` directory rather than putting notebooks at the repo root.
 - Prefer numpy/matplotlib implementations from scratch over deep-learning frameworks unless the week's topic explicitly calls for a framework — the stated goal is mathematical understanding.
+
+## Teaching contract (owner-confirmed, applies to every session)
+
+- **任务单模式**：出任务时只给 任务 + 验收标准 + 坑预警，代码由 owner 自己写。代劳写学习代码是被拒绝的（"改好检查"是理解过程）。owner 卡壳求助时先给提示链，不直接给答案。
+- **先猜后跑**：每个实验先让 owner 猜结果/量级再运行。对 owner 的"口头回答"类问题，等 2 分钟冷静期，不急着代劳。
+- **验收惯例**：用"残差 vs 允差"（1/√N 家族传播公式），不用"数值接近"；全绿才算通过。
+- **较真文化**：输出与预期不符必须停下来查根因；提示词与数据冲突时信数据不信人（包括导师）——owner 已两次用数据推翻导师提示并记档。
+- **卡点记档**：踩坑记进当日 notes/dayN.md 的"卡点金矿"段（症状/根因/防御三件套），这是仓库最有价值的资产。
+- **语言**：与 owner 的一切交流用中文；笔记、README、commit 同理。
+
+## Session continuity (how a fresh session picks up the thread)
+
+1. **开工**：读 README「进度」区（状态锚点，现在时）→ `git log --oneline -5` → 若涉及早前决策，跑 project-memory 的 `context` 命令（store: `~/.codex/project-memory`, project-id `ai-kaoyan`）。检索只按需 `search`，不整库加载。
+2. **收工**：用户说"存档"或 session 结束时——checkpoint 入记忆库（存持久结论，不存过程叙述）；更新 README 进度区的"当前状态"行 + 勾选完成项；commit + push。
+3. **信源优先级**：仓库文件（notes/README/AGENTS.md）> 记忆库 > 会话记忆。会话摘要可能串线（曾把"hello.ipynb 已跑 MNIST 95%"记成事实，实际仓库里根本没有），以文件为准。
+
