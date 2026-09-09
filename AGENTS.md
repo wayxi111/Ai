@@ -48,7 +48,11 @@ Personal learning repository (not a software project). Goal: understand deep lea
 ## Session continuity (how a fresh session picks up the thread)
 
 1. **开工**：读 README「进度」区（状态锚点，现在时）→ `git log --oneline -5` → 若涉及早前决策，跑 project-memory 的 `context` 命令（store: `~/.codex/project-memory`, project-id `ai-kaoyan`）。检索只按需 `search`，不整库加载。
-2. **收工**：每个学习日完成时立即执行（**不等到 session 终止**——本仓库 session 曾因上下文过长被截断，届时已无力存档）：checkpoint 入记忆库（存持久结论，不存过程叙述）；更新 README 进度区的"当前状态"行 + 勾选完成项；commit + push。
+2. **收工**：每个学习日完成时立即执行（**不等到 session 终止**——本仓库 session 曾因上下文过长被截断，届时已无力存档）。顺序固定：
+   1. **bridges 归档**：扫当天 dayN.md 的知识主线/卡点金矿，新桥当日入 notes/bridges.md 对应表（对照"下一步"区分：当日账当天清，实验欠账留给下个工作日开场）
+   2. **README 更新**：进度区"当前状态"行 + 勾选完成项
+   3. **checkpoint 入记忆库**：存持久结论，不存过程叙述
+   4. **commit + push**：一次提交含 dayN.md / bridges.md / notebook 全部当日改动
 3. **信源优先级**：仓库文件（notes/README/AGENTS.md）> 记忆库 > 会话记忆。会话摘要可能串线（曾把"hello.ipynb 已跑 MNIST 95%"记成事实，实际仓库里根本没有），以文件为准。
 4. **记忆库是单机资产**：`~/.codex/project-memory` 不随 git 同步。换机器时凭仓库文件重建（注册 + 按 README/bridges/dayN 重写 overview 与主题 checkpoint 即可，本 memory 的知识 90% 源自 repo 内文件）。store 内全部是纯 markdown，没有 project-memory skill 时也可直接 `ls`/`cat` 读取。
 
