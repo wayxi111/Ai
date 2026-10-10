@@ -1,7 +1,7 @@
 # Day 14（2026-10-08 ~ 2026-10-09）：概率回看与 Softmax + 交叉熵反向闭环
 
 > 今日主题：先用三道闭卷题恢复概率地基，再把平均交叉熵的梯度 `(P-Y)/B` 从符号方向、结构验收到中心差分全部闭环。
-> 阶段结论：`week04/softmax_cross_entropy.ipynb` 已完成 7 个代码 cell 的 Restart Kernel + Run All，执行计数连续为 1–7、无错误、前向与反向总验收均为 PASS。
+> 阶段结论：`week04/softmax_cross_entropy.ipynb` 已完成 7 个代码 cell 的 Restart Kernel + Run All，执行计数连续为 1–7、无错误、损失层前向与 `dL/dZ` 反向总验收均为 PASS；本日不包含把 `dZ` 接入 Dense/ReLU、更新参数和训练分类器的端到端集成。
 
 ## 任务清单
 
@@ -243,4 +243,4 @@ Z=
 
 - 概率补基的三个关键卡点完成闭卷回看，复制与独立、零协方差反例、伯努利最大似然均重新接通。
 - Softmax + 平均交叉熵从稳定前向走到 `(P-Y)/B` 解析梯度，并以 `9.69e-10 < 1e-8` 的中心差分残差完成反向审计。
-- Notebook 已 Restart Kernel + Run All、7 个代码 cell 连续执行且无错误，本模块正式闭环；中心差分细节列入后续慢回看而不阻塞主线。
+- Notebook 已 Restart Kernel + Run All、7 个代码 cell 连续执行且无错误，Softmax+CE 损失层正式闭环；端到端 MLP 分类训练留给 Day 15，中心差分细节列入后续慢回看。
